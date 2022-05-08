@@ -3,10 +3,12 @@ Ejecutar los tests y obtener el reporte con GitHub Actions en .net
 
 ## Estructura del repositorio
 
+- .github/workflows: Archivo yml con el job de build
+- assets: imágenes para el readme
 - console-app: Proyecto de consola en .net 5.0
   - console-app: aplicación de consola
   - console-app-test: proyecto de MSTests
-- .github/workflows: Archivo yml con el job de build
+
 
 ## Reporte con los resultados
 
