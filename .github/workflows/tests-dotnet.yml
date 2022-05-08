@@ -27,7 +27,7 @@ jobs:
       working-directory: ./console-app/
         
     - name: Test
-      run: dotnet test -/console-app/console-app-tests/console-app-tests.csproj -logger:trx || true
+      run: dotnet test ./console-app/console-app-tests/console-app-tests.csproj -logger:trx || true
         
     - name: Upload tests results artifact
       uses: actions/upload-artifact@v2.2.2
