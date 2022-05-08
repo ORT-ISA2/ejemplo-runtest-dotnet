@@ -19,7 +19,7 @@ namespace console_app_tests
         {
             int testNumber = 5;
 
-            Assert.AreEqual(10, testNumber);
+            Assert.AreEqual(5, testNumber);
         }
     }
 }
