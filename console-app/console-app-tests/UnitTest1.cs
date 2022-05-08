@@ -12,5 +12,14 @@ namespace console_app_tests
 
             Assert.AreEqual(10, testNumber);
         }
+
+
+        [TestMethod]
+        public void TestMethod2()
+        {
+            int testNumber = 5;
+
+            Assert.AreEqual(10, testNumber);
+        }
     }
 }
