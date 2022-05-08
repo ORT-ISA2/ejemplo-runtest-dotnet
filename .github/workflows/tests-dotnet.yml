@@ -1,0 +1,36 @@
+name: run-tests-dotnet
+
+on:
+  push:
+    branches: [ main ]
+
+env:
+  DOTNET_VERSION: '5.0.301' # The .NET SDK version to use
+
+jobs:
+  build:
+
+    name: run-test-win
+    runs-on: windows-latest
+  
+    steps:
+    - name: 'Checkout'
+      uses: actions/checkout@v2
+ 
+    - name: Setup .NET Core
+      uses: actions/setup-dotnet@v1
+      with:
+        dotnet-version: ${{ env.DOTNET_VERSION }}
+        
+    - name: Install dependencies
+      run: dotnet restore
+      working-directory: ./
+        
+    - name: Test
+      run: dotnet test -/console-app/console-app-tests/console-app-tests.csproj -logger:trx || true
+        
+    - name: Upload tests results artifact
+      uses: actions/upload-artifact@v2.2.2
+      with:
+        name: GitHubActionsTestsResults
+        path: '**/*.trx'
